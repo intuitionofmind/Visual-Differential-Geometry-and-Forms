@@ -1,0 +1,15 @@
+*.dat
+*.csv
+*.pkl
+*.rar
+*.npz
+*.pyc
+*.gz
+*.aux
+*.bbl
+*.log
+*.out
+*.gz
+*.xdv
+*.fls
+tests/
