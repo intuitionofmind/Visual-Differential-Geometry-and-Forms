@@ -1,0 +1,132 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumerate}
+\usepackage{ctex}
+\usepackage{romannum}
+\usepackage[colorlinks=true, allcolors=magenta]{hyperref}
+\usepackage[legalpaper, margin=100pt]{geometry}
+\usepackage{setspace}
+\renewcommand{\baselinestretch}{1.25}
+
+\setlength{\parindent}{20pt}
+
+\title{第4章~曲面映射：度量}
+\author{Wayne Zheng}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\emph{度量}(Metric)：也被称为第一基本形式（first fundamental form），表示两个临近点之间的无穷小距离的参数化规则。
+参数化的规则选取可以有很多种，因此每个曲面原则上可以写下无穷多种度量。
+度量决定了曲面的内蕴几何，这是高斯最早对微分几何的基本见解。
+
+例如，平面可以有无穷多种度量，直角坐标系中$d\hat{s}^{2}=dx^{2}+dy^{2}$，极坐标中是$d\hat{s}^{2}=dr^{2}+r^{2}d\theta^{2}$.
+其对应的\emph{度量张量}（metric tensor）分别为：
+\begin{equation}
+g=
+\begin{pmatrix}
+1 & 0 \\
+0 & 1
+\end{pmatrix}, \quad
+g=
+\begin{pmatrix}
+1 & 0 \\
+0 & r^{2}
+\end{pmatrix}.
+\end{equation}
+
+下面我们看球面的例子。
+我们先考虑球坐标系$(\phi, \theta)$,其中$\phi\in[0, \pi]$是极角，表示纬度的取值范围；$\theta\in[0, 2\pi)$是方位角，表示经度的取值范围。
+我们先来看几何直观。
+
+\begin{figure}[htbp]
+    \centering % 图片居中
+    \includegraphics[width=0.3\textwidth]{../figs/chap4_01.jpg} % 图片路径
+    \caption{球坐标系下的度量。} 
+    \label{fig:chap4_01} 
+\end{figure}
+
+由图~\ref{fig:chap4_01}可知，球面上无穷小两点之间的距离可以表示为$d\hat{s}^{2}=\left(Rd\phi\right)^{2}+\left(R\sin\phi{d}\theta\right)^{2}$.
+
+
+然后，让我们严格地详细计算这个度量。
+球面上的一点$(x, y, z)$可以用球坐标参数化，即
+\begin{equation*}
+(x(\phi, \theta), y(\phi, \theta), z(\phi, \theta))=(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi).
+\end{equation*}
+进一步地，球面上任意一条曲线可以用一个参数参数化，即$\mathbf{r}=\mathbf{r}(t)=\mathbf{r}(\phi(t), \theta(t))$.
+其切向量为：$\mathbf{r}^{\prime}(t)=\partial_{\phi}\mathbf{r}\dot{\phi}+\partial_{\theta}\mathbf{r}\dot{\theta}$.
+其中两个极坐标参数的切向量为：
+\begin{equation}
+\begin{aligned}
+\mathbf{r}_{\phi}
+&=\frac{\partial\mathbf{r}}{\partial\phi}
+=\left(R\cos\phi\cos\theta, R\cos\phi\sin\theta, -R\sin\phi\right), \\
+\mathbf{r}_{\theta}
+&=\frac{\partial\mathbf{r}}{\partial\theta}
+=\left(-R\sin\phi\sin\theta, R\sin\phi\cos\theta, 0\right).
+\end{aligned}
+\end{equation}
+球面度量为
+\begin{equation*}
+\begin{aligned}
+d\hat{s}^{2}
+&=dx^{2}+dy^{2}+dz^{2} \\
+&=\left(\partial_{\phi}{x}d\phi+\partial_{\theta}{x}d\theta\right)^{2}+\left(\partial_{\phi}{y}d\phi+\partial_{\theta}{y}d\theta\right)^{2}+\left(\partial_{\phi}{z}d\phi+\partial_{\theta}{z}d\theta\right)^{2} \\
+&=\mathbf{r}_{\phi}\cdot\mathbf{r}_{\phi}d\phi^{2}+\mathbf{r}_{\theta}\cdot\mathbf{r}_{\theta}d\theta^{2}+\mathbf{r}_{\phi}\cdot\mathbf{r}_{\theta}d\phi{d}\theta+\mathbf{r}_{\theta}\cdot\mathbf{r}_{\phi}d\theta{d}\phi.
+\end{aligned}
+\end{equation*}
+则其度量张量为
+\begin{equation}
+g=\begin{pmatrix}
+g_{\phi\phi} & g_{\phi\theta} \\
+g_{\theta\phi} & g_{\theta\theta}
+\end{pmatrix}
+=\begin{pmatrix}
+\mathbf{r}_{\phi}\cdot\mathbf{r}_{\phi} & \mathbf{r}_{\phi}\cdot\mathbf{r}_{\theta} \\
+\mathbf{r}_{\theta}\cdot\mathbf{r}_{\phi} & \mathbf{r}_{\theta}\cdot\mathbf{r}_{\theta}
+\end{pmatrix}
+=\begin{pmatrix}
+R^{2} & 0 \\
+0 & R^{2}\sin^{2}\phi
+\end{pmatrix}.
+\end{equation}
+最终，球面用$(\phi, \theta)$写下的度量为$d\hat{s}^{2}=R^{2}\left(d\phi^{2}+\sin^{2}\phi{d}\theta^{2}\right)$,与几何直观方法得到的一致。
+
+类似地，我们计算中心投影的度量（习题3）。首先是用切平面上的参数$(r, \theta)$来参数化球面上的点：
+\begin{equation*}
+\begin{aligned}
+\mathbf{l}=(x, y, z)
+&=(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi) \\
+&=\left(\frac{Rr\cos\theta}{\sqrt{R^{2}+r^{2}}}, \frac{Rr\sin\theta}{\sqrt{R^{2}+r^{2}}}, \frac{R^{2}}{\sqrt{R^{2}+r^{2}}}\right).
+\end{aligned}
+\end{equation*}
+相应地，可以计算切向量$\mathbf{l}_{r}, \mathbf{l}_\theta$.
+相应的度量张量为
+\begin{equation}
+g=\begin{pmatrix}
+g_{r\phi} & g_{r\theta} \\
+g_{\theta{r}} & g_{\theta\theta}
+\end{pmatrix}
+=\begin{pmatrix}
+\mathbf{l}_{r}\cdot\mathbf{l}_{r} & \mathbf{l}_{r}\cdot\mathbf{l}_{\theta} \\
+\mathbf{l}_{\theta}\cdot\mathbf{l}_{r} & \mathbf{l}_{\theta}\cdot\mathbf{l}_{\theta}
+\end{pmatrix}
+=\begin{pmatrix}
+\frac{R^{4}}{\left(R^{2} + r^{2}\right)^{2}} & 0 \\
+0 & \frac{R^{2}r^{2}}{R^{2} + r^{2}}
+\end{pmatrix}.
+\end{equation}
+则其度量为
+\begin{equation}
+d\hat{s}^{2}=\frac{R^{4}}{\left(R^{2}+r^{2}\right)^{2}}dr^{2}+\frac{R^{2}r^{2}}{R^{2}+r^{2}}d\theta^{2}
+=\frac{1}{1+(r/R)^{2}}\left[\frac{dr^{2}}{1+(r/R)^{2}}+r^{2}d\theta^{2}\right],
+\end{equation}
+与几何直观方法得到的一致。
+
+%\bibliographystyle{unsrt}
+%\bibliography{refs}
+\end{document}
