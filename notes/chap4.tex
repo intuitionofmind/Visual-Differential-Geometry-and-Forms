@@ -7,6 +7,7 @@
 \usepackage[colorlinks=true, allcolors=magenta]{hyperref}
 \usepackage[legalpaper, margin=100pt]{geometry}
 \usepackage{setspace}
+\usepackage{tcolorbox}
 \renewcommand{\baselinestretch}{1.25}
 
 \setlength{\parindent}{20pt}
@@ -173,6 +174,26 @@ g_{\theta{r}} & g_{\theta\theta}
 则其度量为$d\hat{s}^{2}=\frac{4R^{4}}{\left(R^{2} + r^{2}\right)^{2}}\left(dr^{2}+r^{2}d\theta^{2}\right)$.
 即$d\hat{s}=\frac{2R^{2}}{R^{2} + r^{2}}ds$,是一个共形变换，与几何直观方法得到的一致。
 
+\section{球极投影的保圆性}
+
+\begin{tcolorbox}[colback=white, arc=3mm, auto outer arc]
+\begin{minipage}[c,t]{1.0\textwidth}
+\kaishu
+设平面的方程为：
+\begin{equation*}
+    Ax+By+Cz=D.
+\end{equation*}
+设$P=(x_{0}, y_{0}, z_{0})$ 与$Q=(x_{1}, y_{1}, z_{1})$是平面上的两点，$\mathbf{v}\equiv(x_{1}-x_{0}, y_{1}-y_{0}, z_{1}-z_{0})$.
+则显然$\mathbf{v}$与$\mathbf{n}=(A, B, C)$正交，即$\mathbf{v}\cdot\mathbf{n}=0$.
+$\mathbf{n}$是平面的法向量。
+另设$P^{\prime}=(x_{0}^{\prime}, y_{0}^{\prime}, z_{0}^{\prime})$是平面外的任意一点，则$P^{\prime}$到平面的距离的向量即为投影到法向量方向：$    \mathbf{d}=\text{Proj}_{\mathbf{n}}\left(\overrightarrow{P^{\prime}P}\right)=\vert\overrightarrow{P^{\prime}P}\vert\cos\alpha\hat{\mathbf{n}}$.
+距离为
+\begin{equation*}
+d=\overrightarrow{P^{\prime}P}\cdot\hat{\mathbf{n}}
+=\frac{\vert Ax_{0}^{\prime}+By_{0}^{\prime}+Cz_{0}^{\prime}-D\vert}{\sqrt{A^{2}+B^{2}+C^{2}}}.
+\end{equation*}
+\end{minipage}
+\end{tcolorbox}
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
