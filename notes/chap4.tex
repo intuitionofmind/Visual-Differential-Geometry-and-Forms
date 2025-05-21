@@ -19,6 +19,8 @@
 
 \maketitle
 
+\section{度量}
+
 \emph{度量}(Metric)：也被称为第一基本形式（first fundamental form），表示两个临近点之间的无穷小距离的参数化规则。
 参数化的规则选取可以有很多种，因此每个曲面原则上可以写下无穷多种度量。
 度量决定了曲面的内蕴几何，这是高斯最早对微分几何的基本见解。
@@ -37,6 +39,8 @@ g=
 0 & r^{2}
 \end{pmatrix}.
 \end{equation}
+
+\section{球面度量}
 
 下面我们看球面的例子。
 我们先考虑球坐标系$(\phi, \theta)$,其中$\phi\in[0, \pi]$是极角，表示纬度的取值范围；$\theta\in[0, 2\pi)$是方位角，表示经度的取值范围。
@@ -104,8 +108,8 @@ R^{2} & 0 \\
 &=\left(\frac{Rr\cos\theta}{\sqrt{R^{2}+r^{2}}}, \frac{Rr\sin\theta}{\sqrt{R^{2}+r^{2}}}, \frac{R^{2}}{\sqrt{R^{2}+r^{2}}}\right).
 \end{aligned}
 \end{equation*}
-相应地，可以计算切向量$\mathbf{l}_{r}, \mathbf{l}_\theta$.
-相应的度量张量为
+相应地，可以计算切向量$\mathbf{l}_{r}=\partial_{r}\mathbf{l}, \mathbf{l}_\theta=\partial_{\theta}\mathbf{l}$.
+度量张量为
 \begin{equation}
 g=\begin{pmatrix}
 g_{r\phi} & g_{r\theta} \\
@@ -126,6 +130,49 @@ d\hat{s}^{2}=\frac{R^{4}}{\left(R^{2}+r^{2}\right)^{2}}dr^{2}+\frac{R^{2}r^{2}}{
 =\frac{1}{1+(r/R)^{2}}\left[\frac{dr^{2}}{1+(r/R)^{2}}+r^{2}d\theta^{2}\right],
 \end{equation}
 与几何直观方法得到的一致。
+
+\begin{figure}[htbp]
+    \centering % 图片居中
+    \includegraphics[width=0.5\textwidth]{../figs/chap4_02.png}
+    \caption{球极投影的侧剖图。} 
+    \label{fig:chap4_02} 
+\end{figure}
+
+我们再来计算球极投影的度量。
+如图~\ref{fig:chap4_02}所示，我们有：
+\begin{equation*}
+\sin\left(\frac{\pi-\phi}{2}\right)
+=\cos\left(\frac{\phi}{2}\right)=\frac{r}{\sqrt{R^{2}+r^{2}}}, \quad
+\cos\left(\frac{\pi-\phi}{2}\right)
+=\sin\left(\frac{\phi}{2}\right)=\frac{R}{\sqrt{R^{2}+r^{2}}}.
+\end{equation*}
+球极投影的参数化为
+\begin{equation*}
+\begin{aligned}
+\mathbf{l}=(x, y, z)
+&=(R\sin\phi\cos\theta, R\sin\phi\sin\theta, R\cos\phi) \\
+&=\left[\frac{2R^{2}r\cos\theta}{R^{2}+r^{2}}, \frac{2R^{2}r\sin\theta}{R^{2}+r^{2}}, \frac{R(r^{2}-R^{2})}{R^{2}+r^{2}}\right].
+\end{aligned}
+\end{equation*}
+相应地，可以计算切向量$\mathbf{l}_{r}=\partial_{r}\mathbf{l}, \mathbf{l}_\theta=\partial_{\theta}\mathbf{l}$.
+度量张量为
+\begin{equation}
+g=\begin{pmatrix}
+g_{r\phi} & g_{r\theta} \\
+g_{\theta{r}} & g_{\theta\theta}
+\end{pmatrix}
+=\begin{pmatrix}
+\mathbf{l}_{r}\cdot\mathbf{l}_{r} & \mathbf{l}_{r}\cdot\mathbf{l}_{\theta} \\
+\mathbf{l}_{\theta}\cdot\mathbf{l}_{r} & \mathbf{l}_{\theta}\cdot\mathbf{l}_{\theta}
+\end{pmatrix}
+=\begin{bmatrix}
+\frac{4R^{4}}{\left(R^{2} + r^{2}\right)^{2}} & 0 \\
+0 & \frac{4R^{4}r^{2}}{\left(R^{2} + r^{2}\right)^{2}}
+\end{bmatrix}.
+\end{equation}
+则其度量为$d\hat{s}^{2}=\frac{4R^{4}}{\left(R^{2} + r^{2}\right)^{2}}\left(dr^{2}+r^{2}d\theta^{2}\right)$.
+即$d\hat{s}=\frac{2R^{2}}{R^{2} + r^{2}}ds$,是一个共形变换，与几何直观方法得到的一致。
+
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
