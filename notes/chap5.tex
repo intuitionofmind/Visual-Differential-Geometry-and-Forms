@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumerate}
+\usepackage{ctex}
+\usepackage{romannum}
+\usepackage[colorlinks=true, allcolors=magenta]{hyperref}
+\usepackage[legalpaper, margin=100pt]{geometry}
+\usepackage{setspace}
+\usepackage{tcolorbox}
+\renewcommand{\baselinestretch}{1.25}
+
+\setlength{\parindent}{20pt}
+
+\title{第5章~伪球面和双曲平面}
+\author{Wayne Zheng}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+贝尔特拉米（Beltrami）是意大利数学家，对双曲几何有重要贡献。
+他也发现了拉格朗日力学中的贝尔特拉米等式。
+他也知道局部的高斯-博内定理。
+
+\section{利用变分原理证明广义斯涅尔定律}
+
+\begin{tcolorbox}[colback=white, arc=3mm, auto outer arc]
+\begin{minipage}[c,t]{1.0\textwidth}
+\kaishu
+贝尔特拉米等式。
+考虑作用量
+\begin{equation*}
+    S=\int{L}(u, u^{\prime}, x)dx
+\end{equation*}
+使函数$u(x)$取到极值。
+这里$x$是描述系统演化的独立参数（类比于时间$t$），$u$可以看作是广义坐标。
+可以定义广义动量$p=\partial{L}/\partial{u^{\prime}}$.
+此时变分原理导出的拉格朗日方程简化为
+\begin{equation*}
+    \frac{dp}{dx}-\frac{\partial{L}}{\partial{u}}=0.
+\end{equation*}
+哈密顿量$H=pu^{\prime}-L$.
+利用拉格朗日方程，则可以得到贝尔特拉米等式：
+\begin{equation*}
+\begin{aligned}
+\frac{dH}{dx}
+&=\frac{dp}{dx}u^{\prime}+pu^{\prime\prime}-\left(\frac{\partial{L}}{\partial{u}}u^{\prime}+\frac{\partial{L}}{\partial{u\prime}}u^{\prime\prime}+\frac{\partial{L}}{\partial{x}}\right)=-\frac{\partial{L}}{\partial{x}}.
+\end{aligned}
+\end{equation*}
+这是诺特定理的一个特例。
+\end{minipage}
+\end{tcolorbox}
+
+%\bibliographystyle{unsrt}
+%\bibliography{refs}
+\end{document}
