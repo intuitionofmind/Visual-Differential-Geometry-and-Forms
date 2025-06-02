@@ -55,32 +55,56 @@
 
 考虑光在介质中的传播，坐标是$(x, y)$，路径可以表示成曲线 $y=y(x)$.
 不妨进一步假设折射率只是纵坐标的函数$n=n(y)$.
-则光从$x_{A}$到到$x_{B}$的作用量为
+则光从$A$到$B$的作用量是累积用时的积分
 \begin{equation}
 \begin{aligned}
 S
-&=\int_{x_{A}}^{x_{B}}\frac{ds}{v}=\int_{x_{A}}^{x_{B}}\frac{1}{v(y)}\sqrt{dx^{2}+dy^{2}} \\
+&=\int\frac{ds}{v}
+=\int\frac{1}{v(y)}\sqrt{dx^{2}+dy^{2}} \\
 &=\int_{x_{A}}^{x_{B}}n(y)\sqrt{1+\left(\frac{dy}{dx}\right)^{2}}dx
-\equiv\int_{x_{A}}^{x_{B}}Ldx.
+\equiv\int_{x_{A}}^{x_{B}}Ldx,
 \end{aligned}
 \end{equation}
-拉氏量$L=n(y)\sqrt{1+y^{\prime{2}}}$.
+其中拉氏量$L=n(y)\sqrt{1+y^{\prime{2}}}$.
+根据费马变分原理，光线沿着作用量$S$取极值（最小值）的路径。
 哈密顿量
 \begin{equation}
     H
     =y^{\prime}p-L
     =-\frac{n(y)}{\sqrt{1+y^{\prime{2}}}}.
 \end{equation}
-根据贝尔特拉米等式，易得$dH/dx=0$,即$H=-C$是一个常数，也就意味着系统沿着$x$方向具有连续的平移不变性，从而对应有一个守恒量，这个守恒量
+根据贝尔特拉米等式，易得$dH/dx=0$,即$H=-k$是一个常数，也就意味着系统沿着$x$方向具有连续的平移不变性，从而对应有一个守恒量，这个守恒量
 \begin{equation}
     \frac{n(y)}{\sqrt{1+y^{\prime{2}}}}
     =n(y)\frac{dx}{\sqrt{dx^{2}+dy^{2}}}
-    =n(y)\sin\theta=C
+    =n(y)\sin\theta=k
 \end{equation}
 给出了连续介质的斯涅尔定律，$\theta$是光线与入射平面的法线的夹角。
 这与几何方法得到的斯涅尔定律一致。
 
 下面讨论两个例子。
+
+在贝尔特拉米-庞加莱半平面$(x, y)$中，$y>0$,光速$v(y)=y$,
+根据广义斯涅尔定律
+\begin{equation*}
+    \frac{\sin\theta}{y}
+    =\frac{1}{y\sqrt{1+y^{\prime{2}}}}=k.
+\end{equation*}
+原则上需要求解这个关于$y$的常微分方程：$y^{2}(1+y^{\prime{2}})-1/k^{2}=0$，但实际上我们知道$x^{2}+y^{2}=1/k^{2}\equiv{r^{2}}$.
+也容易验证$y=\sqrt{r^{2}-x^{2}}$满足此微分方程。
+
+（习题15）如果光在平面$(x, y)$中传播，光速$v(y)=1/\sqrt{1-y}$，则根据广义斯涅尔定律，
+\begin{equation*}
+    \frac{\sin\theta}{v(y)}
+    =\frac{\sqrt{1-y}}{\sqrt{1+y^{\prime{2}}}}=k.
+\end{equation*}
+求解这个关于$y$的常微分方程：$k^{2}y^{\prime{2}}+y+k^{2}-1=0$,得到的一般解是
+\begin{equation*}
+    y(x)
+    =-\frac{1}{4k^{2}}\left(x-kC\right)^{2}-k^{2}+1,
+\end{equation*}
+其中$C$是任意常数。
+这是一条开口向下的抛物线，顶点在$\left(kC, 1-k^{2}\right)$处。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
