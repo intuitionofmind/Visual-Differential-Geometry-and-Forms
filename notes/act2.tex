@@ -284,8 +284,39 @@ S
 
 \section{等距映射和复数}
 
-等距映射（Isometric map）是曲面上保持第一基本形式不变的映射。
-可以理解为无穷小的全等变换，而共形映射则是无穷小的相似变换。
+等距映射（isometric map）是曲面上保持第一基本形式不变的映射。
+包括正向（direct）等距映射和反向（opposite）等距映射。
+给定一个曲面$\mathcal{S}$，上面的所有等距变换构成一个群，记作$\mathcal{G}$.
+所有正向等距变换构成一个子群，记作$\mathcal{G}_{+}(\mathcal{S})$.
+在欧几里德几何中，其正向等距变换是
+\begin{equation*}
+    E(z)=e^{\text{i}\theta}z+k.
+\end{equation*}
+
+莫比乌斯变换（Möbius transformation）: $z\mapsto M(z)=\frac{az+b}{cz+d}$.
+其中最重要的\emph{复反演}$z\mapsto 1/z$可以被看作是几何反演与复共轭的结合，\emph{几何上是黎曼球面绕实轴旋转$\pi$}.
+
+（习题24）考虑$z^{m}$的伸缩扭转从而证明：$(z^{m})^{\prime}=mz^{m-1}$.
+
+令$z=re^{\mathrm{i}\theta}$, 则$\tilde{z}\equiv f(z)=z^{m}=r^{m}e^{\mathrm{i}m\theta}$.
+根据定义，$\delta\tilde{z}\equiv f^{\prime}(z)\delta{z}\equiv ae^{\mathrm{i}\tau}\delta{z}$, 其中$a$是伸缩缝因子，$\tau$是扭转角。
+
+我们首先考虑沿着$r$方向的小变化$\delta{z}=\delta{r}e^{\mathrm{i}\theta}$,则$\tilde{z}\rightarrow(r+\delta{r})^{m}e^{m\mathrm{i}\theta}$.
+$(r+\delta{r})^{m}\simeq r^{m}+mr^{m-1}\delta{r}$,从而
+\begin{equation*}
+\delta\tilde{z}=mr^{m-1}\delta{r}e^{\mathrm{i}m\theta}=mr^{m-1}e^{\mathrm{i}(m-1)\theta}\left(\delta{r}e^{\mathrm{i}\theta}\right),
+\end{equation*}
+从而可以得到伸缩和扭转因子分别为$a=mr^{m-1},\tau=(m-1)\theta$.
+所以$f^{\prime}(z)=ae^{\mathrm{i}\tau}=mr^{m-1}e^{\mathrm{i}(m-1)\theta}=mz^{m-1}$.
+
+再让我们考虑沿着弧线方向的小变化，此时原弧长是$\delta{l}=r\delta\theta$,
+$\delta{z}=\delta{l}e^{\mathrm{i}(\theta+\pi/2)}$.
+像弧长变化为$r^{m}(m\delta)=mr^{m-1}(r\delta\theta)=mr^{m-1}\delta{l}$, 因此
+\begin{equation*}
+\delta\tilde{z}=mr^{m-1}\delta{l}e^{\mathrm{i}(m\theta+\pi/2)}=mr^{m-1}e^{\mathrm{i}(m-1)\theta}\left[\delta{l}e^{\mathrm{i}(\theta+\pi/2)}\right].
+\end{equation*}
+从而可以得到伸缩和扭转因子分别为$a=mr^{m-1},\tau=(m-1)\theta$, 与前一致。
+这也再次说明$f^{\prime}(z)$不依赖于$\delta{z}$的角度，是\emph{解析共形的}。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
