@@ -296,7 +296,8 @@ S
 莫比乌斯变换（Möbius transformation）: $z\mapsto M(z)=\frac{az+b}{cz+d}$.
 其中最重要的\emph{复反演}$z\mapsto 1/z$可以被看作是几何反演与复共轭的结合，\emph{几何上是黎曼球面绕实轴旋转$\pi$}.
 
-（习题24）考虑$z^{m}$的伸缩扭转从而证明：$(z^{m})^{\prime}=mz^{m-1}$.
+（习题24）
+考虑$z^{m}$的伸缩扭转从而证明：$(z^{m})^{\prime}=mz^{m-1}$.
 
 令$z=re^{\mathrm{i}\theta}$, 则$\tilde{z}\equiv f(z)=z^{m}=r^{m}e^{\mathrm{i}m\theta}$.
 根据定义，$\delta\tilde{z}\equiv f^{\prime}(z)\delta{z}\equiv ae^{\mathrm{i}\tau}\delta{z}$, 其中$a$是伸缩缝因子，$\tau$是扭转角。
@@ -317,6 +318,32 @@ $\delta{z}=\delta{l}e^{\mathrm{i}(\theta+\pi/2)}$.
 \end{equation*}
 从而可以得到伸缩和扭转因子分别为$a=mr^{m-1},\tau=(m-1)\theta$, 与前一致。
 这也再次说明$f^{\prime}(z)$不依赖于$\delta{z}$的角度，是\emph{解析共形的}。
+
+（习题27）
+让我们进一步考虑黎曼球面上的旋转，我们已知黎曼球面上的一点$(X,Y,Z)$到赤道复平面的球极投影公示是：
+\begin{equation*}
+    (X, Y, Z)
+    \rightarrow\left[\frac{2\Re(z)}{\vert{z}\vert^{2}+1}, \frac{2\Im(z)}{\vert{z}\vert^{2}+1}, \frac{\vert{z}\vert^{2}-1}{\vert{z}\vert^{2}+1}\right].
+\end{equation*}
+如果绕着$X$轴旋转$\theta$，则对应着在$YZ$平面内旋转$\theta$,其旋转矩阵为
+\begin{equation*}
+    R_{X}(\theta)
+    =\begin{pmatrix}
+    1 & 0 & 0 \\
+    0 & \cos\theta & -\sin\theta \\
+    0 & \sin\theta & \cos\theta
+    \end{pmatrix}.
+\end{equation*}
+因此旋转后的点为$(X^{\prime}, Y^{\prime}, Z^{\prime})$.
+对应复平面上的点
+\begin{equation*}
+z=\frac{X+\mathtt{i}Y}{1-Z}
+\rightarrow
+\frac{X^{\prime}+\mathtt{i}Y^{\prime}}{1-Z^{\prime}}
+=\frac{X+\mathtt{i}\left(Y\cos\theta-Z\sin\theta\right)}{1-\left(Z\cos\theta+Y\sin\theta\right)}.
+\end{equation*}
+If $\theta=\pi/2$, 则$Y^{\prime}=-Z$, $Z^{\prime}=Y$.
+
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
