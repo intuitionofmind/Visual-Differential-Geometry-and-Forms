@@ -1,0 +1,51 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{graphicx} % Required for inserting images
+\usepackage{enumerate}
+\usepackage{ctex}
+\usepackage{romannum}
+\usepackage[colorlinks=true, allcolors=magenta]{hyperref}
+\usepackage[legalpaper, margin=100pt]{geometry}
+\usepackage{setspace}
+\usepackage{tcolorbox}
+\renewcommand{\baselinestretch}{1.25}
+
+\setlength{\parindent}{20pt}
+
+\title{第三幕 曲率}
+\author{Wayne Zheng}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\tableofcontents
+
+\section{平面曲线的曲率}
+
+不存在一维的内蕴曲率概念。
+几何与物理的联系：如果一个单位质量的滚珠在一段无摩擦的曲线上以单位速率运动，金属丝就会有一个垂直于切向的作用力作用在滚珠上，牛顿知道，这个力$F$的大小就是曲线的曲率$\kappa$.
+
+曲率最早由牛顿引入，描述曲线的“弯曲性”。
+更确切地说，曲率是切线关于弧长的转向率。
+如果$\varphi$是切线的变化角，则$\kappa=d\varphi/ds$.
+设$\mathbf{T}$和$\mathbf{N}$是曲线的单位切向量和指向曲率中心的单位法向量，则我们容易得到$\delta\mathbf{T}\asymp\mathbf{N}\delta\varphi$，从而
+\begin{equation}
+    \frac{d\mathbf{T}}{ds}=\kappa\mathbf{N}.
+\end{equation}
+
+\section{三维空间的曲线}
+
+密切平面：
+在三维空间中扭曲的曲线，每个无限小的部分仍可以认为是在一个平面内的，这个平面称为密切平面（osculating plane）。
+密切平面由两个（单位）向量切向量$\mathbf{T}$和主法向量$\mathbf{N}$张成，密切平面的法向量称为副法向量$\mathbf{B}$.
+$(\mathbf{T}, \mathbf{N}, \mathbf{B})$组成了\emph{弗勒内}（Frenet）框架.
+设曲线是关于弧长$s$的函数，即$\mathbf{r}=\mathbf{r}(s)$.
+则切向量定义为
+\begin{equation*}
+    \mathbf{T}=\frac{d\mathbf{r}}{ds}.
+\end{equation*}
+
+%\bibliographystyle{unsrt}
+%\bibliography{refs}
+\end{document}
