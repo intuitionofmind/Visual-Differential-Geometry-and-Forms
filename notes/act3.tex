@@ -85,6 +85,36 @@ $(\mathbf{T}, \mathbf{N}, \mathbf{B})$组成了\emph{弗勒内}（Frenet）框�
     \end{pmatrix}.
 \end{equation}
 
+\section{曲面的主曲率}
+
+选取$p$点作为原点，法线方向为$z$轴，切平面为$x$-$y$平面，建立直角坐标系。
+可以用$z=f(x,y)$来表示曲面，在原点处$f(0,0)=0, \partial_{x}f=\partial_{y}f=0$.
+当$x, y\rightarrow 0$时，我们可以展开$z\asymp ax^{2}+by^{2}+cxy+dx+ey$.
+因为在原点$\partial_{x}f=\partial_{y}f=0$, 所以$\partial_{x}f=2ax+cy+d\rightarrow 0$.
+因此$d=e=0$.
+我们可以用\emph{非常靠近}且平行于切面面的一个平面$z=k$来切开曲面，得到的截面曲线在原点附近可以表示为
+\begin{equation}
+    z\asymp ax^{2}+by^{2}+cxy
+\end{equation}
+是一个二次齐次曲线。
+圆锥曲线都有两个相互垂直的对称轴，如果我们选取这两个轴作为$x$轴和$y$轴，则可以消去交叉项，因为在反射变换下$x\rightarrow -x, y\rightarrow y$, $f(x,y)$保持不变。
+因此，我们可以将截面曲线表示为
+\begin{equation}
+    z\asymp ax^{2}+by^{2}.
+\end{equation}
+根据二维空间中的曲线，我们知道分别沿着$x$轴和$y$轴的曲线可以表示为$z\asymp \frac{1}{2}\kappa_{1}x^{2}$和$z\asymp \frac{1}{2}\kappa_{2}y^{2}$，其中我们定义了$\kappa_{1}=\kappa(0), \kappa_{2}=\kappa(\pi/2)$.
+因此，
+\begin{equation}
+    z\asymp \frac{1}{2}\kappa_{1}x^{2}+\frac{1}{2}\kappa_{2}y^{2}.
+\end{equation}
+如果考虑任意角度的截面曲线，设该截面与$x$轴的夹角为$\theta$，如果在切平面内沿着$\theta$方向移动一小段距离$\epsilon$，则$x=\epsilon\cos\theta, y=\epsilon\sin\theta$, 则
+\begin{equation}
+    \kappa(\theta)
+    \asymp 2\left(\frac{z}{\epsilon^{2}}\right)
+    \asymp 2\left[\frac{\frac{1}{2}\kappa_{1}(\epsilon\cos\theta)^{2}+\frac{1}{2}\kappa_{2}(\epsilon\sin\theta)^{2}}{\epsilon^{2}}\right]
+    =\kappa_{1}\cos^{2}\theta+\kappa_{2}\sin^{2}\theta.
+\end{equation}
+这就是\emph{欧拉曲率公式}。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
