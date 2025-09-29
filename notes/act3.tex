@@ -12,7 +12,7 @@
 
 \setlength{\parindent}{20pt}
 
-\title{第三幕 曲率}
+\title{第三幕~曲率}
 \author{Wayne Zheng}
 \date{\today}
 
@@ -41,6 +41,26 @@
 \end{equation}
 因为如果将考虑对象从曲线变成曲面，就不存在唯一的切向量了。
 换句话说，在平面内，切向量和法向量的转向速率都是曲率$\kappa$, 其变化率的方向是相反的，平行于另一个向量。
+
+一般地，牛顿发现质点在二维平面的运动曲线$[x(t), y(t)]$的曲率公式
+\begin{equation}
+    \kappa
+    =\frac{\dot{x}\ddot{y}-\dot{y}\ddot{x}}{\left(\dot{x}+\dot{y}^{2}\right)^{3/2}}.
+\end{equation}
+上方的点是关于时间的导数。
+对于单位速率运动的质点，$|\mathbf{v}|^{2}=\dot{x}^{2}+\dot{y}^{2}=1$.
+如果质点在$\delta{t}$时刻内走过了$\delta\varphi$，此时$\delta{t}=\delta{s}$.
+则$\dot{y}$方向的增量为$\delta\dot{y}\asymp \ddot{y}\delta{t}=\ddot{y}\delta{s}$.
+根据相似三角形，
+\begin{equation*}
+    \frac{\delta\varphi}{\ddot{y}\delta{s}}\asymp\frac{1}{\dot{x}}.
+\end{equation*}
+即
+\begin{equation}
+    \kappa\equiv\frac{d\varphi}{ds}
+    =\frac{\ddot{y}}{\dot{x}}.
+\end{equation}
+利用三角形另一边的相似性质，容易得此时曲率的另一个表达式$\kappa=-\ddot{x}/\dot{y}$.
 
 \section{三维空间的曲线}
 
