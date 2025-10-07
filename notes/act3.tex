@@ -65,7 +65,7 @@
 \section{三维空间的曲线}
 
 密切平面：
-在三维空间中扭曲的曲线，每个无限小的部分仍可以认为是在一个平面内的，这个平面称为密切平面（osculating plane）。
+在三维空间中扭曲的曲线，每个无限小的部分仍可以认为是在一个平面内的，这个平面称为\emph{密切平面}（osculating plane）。
 密切平面可以看作是曲线在瞬时最贴合的平面。
 密切平面由两个（单位）向量切向量$\mathbf{T}$和主法向量$\mathbf{N}$张成。
 考虑沿着该曲线的质点运动，切向量$\mathbf{T}$描述的是曲线的瞬时\emph{速度}方向，主法向量$\mathbf{N}$描述的是曲线的瞬时\emph{加速度}方向，指向曲率中心。
@@ -135,6 +135,26 @@ $(\mathbf{T}, \mathbf{N}, \mathbf{B})$组成了\emph{弗勒内}（Frenet）框�
     =\kappa_{1}\cos^{2}\theta+\kappa_{2}\sin^{2}\theta.
 \end{equation}
 这就是\emph{欧拉曲率公式}。
+
+\section{测地线和测地曲率}
+
+三维空间中，一般曲面内的一般曲线的曲率可以分为两个分量：
+在曲面内（对其中的居民可见）的称为\emph{测地曲率}（geodesic curvature）$\kappa_{g}$, 在曲面外（对其中的居民不可见）的称为\emph{法曲率}（normal curvature）$\kappa_{n}$.
+如果密切平面垂直于曲面（的法向量），那么所有曲率都是法曲率$\kappa=\kappa_{n}$，$\kappa_{g}=0$.
+地球表面的大圆就是这样。
+
+如果质点以单位速率走过一条曲线，其加速度向量的方向指向曲率中心，长度就是曲率，因此可以将质点的加速度称为\emph{曲率向量}（curvature vector）$\mathbf{\kappa}=\kappa\mathbf{N}$.
+
+设$\mathbf{T}$是曲线$\mathcal{C}$在点$p$处的单位切向量，$\mathbf{n}$是法向量。
+$T_{p}$是曲面在点$p$处的切平面，$\mathbf{n}$与$\mathbf{T}$张成法平面$\Pi_{T}$.
+$\Pi_{T}$与密切平面（副法向量$\mathbf{B}$）的夹角为$\gamma$, 则\emph{测地曲率向量}$\mathbf{\kappa}_{g}$和\emph{法曲率向量}$\mathbf{\kappa}_{n}$实际上就是$\mathbf{\kappa}$在$T_{p}$和$\Pi_{T}$上的投影分量，即
+\begin{equation}
+    \kappa_{g}=\kappa\cos\gamma, \quad
+    \kappa_{n}=\kappa\sin\gamma.
+\end{equation}
+
+默尼耶（Jean Baptiste Meusnier）在1776年就注意到：
+曲面迫使其上面的所有曲线沿着法方向弯曲同等的量。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
