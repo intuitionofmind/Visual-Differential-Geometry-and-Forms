@@ -143,18 +143,30 @@ $(\mathbf{T}, \mathbf{N}, \mathbf{B})$组成了\emph{弗勒内}（Frenet）框�
 如果密切平面垂直于曲面（的法向量），那么所有曲率都是法曲率$\kappa=\kappa_{n}$，$\kappa_{g}=0$.
 地球表面的大圆就是这样。
 
-如果质点以单位速率走过一条曲线，其加速度向量的方向指向曲率中心，长度就是曲率，因此可以将质点的加速度称为\emph{曲率向量}（curvature vector）$\mathbf{\kappa}=\kappa\mathbf{N}$.
+如果质点以单位速率走过一条曲线，其加速度向量的方向指向曲率中心，长度就是曲率，因此可以将质点的加速度称为\emph{曲率向量}（curvature vector）$\overrightarrow{\kappa}=\kappa\mathbf{N}\equiv\dot{\mathbf{T}}$.
 
 设$\mathbf{T}$是曲线$\mathcal{C}$在点$p$处的单位切向量，$\mathbf{n}$是法向量。
 $T_{p}$是曲面在点$p$处的切平面，$\mathbf{n}$与$\mathbf{T}$张成法平面$\Pi_{T}$.
-$\Pi_{T}$与密切平面（副法向量$\mathbf{B}$）的夹角为$\gamma$, 则\emph{测地曲率向量}$\mathbf{\kappa}_{g}$和\emph{法曲率向量}$\mathbf{\kappa}_{n}$实际上就是$\mathbf{\kappa}$在$T_{p}$和$\Pi_{T}$上的投影分量，即
+$\Pi_{T}$与密切平面（副法向量$\mathbf{B}$）的夹角为$\gamma$, 则\emph{测地曲率向量}$\overrightarrow{\kappa}_{g}$和\emph{法曲率向量}$\overrightarrow{\kappa}_{n}$实际上就是$\overrightarrow{\kappa}$在$T_{p}$和$\Pi_{T}$上的投影分量，即
 \begin{equation}
     \kappa_{g}=\kappa\cos\gamma, \quad
     \kappa_{n}=\kappa\sin\gamma.
 \end{equation}
 
-默尼耶（Jean Baptiste Meusnier）在1776年就注意到：
-曲面迫使其上面的所有曲线沿着法方向弯曲同等的量。
+默尼耶（Jean Baptiste Meusnier, 法国数学家、物理学家和工程师）在1776年就注意到：
+曲面迫使其上面的所有曲线沿着法方向弯曲同等的量，从而给出默尼耶定理：
+\begin{tcolorbox}[colback=white, arc=3mm, auto outer arc]
+\begin{minipage}[c,t]{1.0\textwidth}
+\kaishu
+曲面上经过点$p$、指向同一方向$\mathbf{T}$的所有曲线都具有相同的法曲率$\mathbf{\kappa}_{n}(\mathbf{T})$, 即曲面在$\mathbf{T}$方向的法截线曲率。
+如果曲线在$p$点密切平面与曲面在$p$点的切平面成夹角$\gamma$, 曲线在$p$点的曲率为$\kappa_{\gamma}$, 
+则$\kappa_{\gamma}\sin\gamma=\kappa_{n}(\mathbf{T})$.
+\end{minipage}
+\end{tcolorbox}
+
+测地线是内蕴的“直线”，其上每一点$\kappa_{g}=0$.
+也就是说：
+\emph{对于测地线上的每一点，曲面在该点的法向量$\mathbf{n}_{p}$一定位于该点的密切平面$\Pi_{p}$之内}。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
