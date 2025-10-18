@@ -138,6 +138,8 @@ $(\mathbf{T}, \mathbf{N}, \mathbf{B})$组成了\emph{弗勒内}（Frenet）框�
 
 \section{测地线和测地曲率}
 
+\subsection{两种曲率}
+
 三维空间中，一般曲面内的一般曲线的曲率可以分为两个分量：
 在曲面内（对其中的居民可见）的称为\emph{测地曲率}（geodesic curvature）$\kappa_{g}$, 在曲面外（对其中的居民不可见）的称为\emph{法曲率}（normal curvature）$\kappa_{n}$.
 如果密切平面垂直于曲面（的法向量），那么所有曲率都是法曲率$\kappa=\kappa_{n}$，$\kappa_{g}=0$.
@@ -170,6 +172,7 @@ $\Pi_{T}$与密切平面（副法向量$\mathbf{B}$）的夹角为$\gamma$, 则\
 换句话说，这些线对于曲面内的居民而言是真正的直线，因为他们无法得知法曲率$\kappa_{n}$的存在；
 对于曲面外的观察者而言，就是测地线。
 
+\subsection{旋转曲面上的测地线}
 下面我们考虑旋转曲面。
 一般旋转曲面的子午线一定是测地线。
 
@@ -183,6 +186,55 @@ $\Pi_{T}$与密切平面（副法向量$\mathbf{B}$）的夹角为$\gamma$, 则\
 用$(x, y)$坐标描述，即在$\Pi$上的投影。
 这是一个椭圆。
 
+下面我们具体考虑从$z=x\tan\gamma$到$\Pi$的投影$\mathcal{P}$.
+容易看出，这是一个带有缩放性质的\emph{线性变换}。
+我们首先要在$z=x\tan\gamma$上来表示一个点，即一个向量。
+容易看出，可以选取两个正交归一的基向量$\mathbf{e}_{1}=(0, 1, 0),\mathbf{e}_{2}=(\cos\gamma, 0, \sin\gamma)$.
+$\mathbf{r}$在该平面上的坐标为$(u, v)$,即
+\begin{equation*}
+    \mathbf{r}
+    =u\mathbf{e}_{1}+v\mathbf{e}_{2}
+    =(v\cos\gamma, u, v\sin\gamma)
+    \longmapsto
+    (v\cos\gamma, u)
+    \equiv(x, y).
+\end{equation*}
+则$\mathcal{P}$的表示矩阵（雅可比矩阵）是
+\begin{equation*}
+    P=
+    \begin{pmatrix}
+        0 & \cos\gamma \\
+        1 & 0
+    \end{pmatrix}.
+\end{equation*}
+注意，$\det(P)=\cos\gamma$代表了面积微元的缩放比例系数，即$d\mathcal{A}=\cos\gamma\cdot{dA}$.
+
+当一个质点以单位速率在$z=x\tan\gamma$平面内的大圆上运动时，在$\Delta{t}$时间内其扫过的角度为$\Delta\theta=1\cdot\Delta{t}/R$, 面积为$A=\frac{1}{2}R^{2}\Delta\theta=\frac{1}{2}R\Delta{t}$, 即\emph{相等时间内扫过的面积相等}。
+其在$\Pi$上的投影也是如此，即$d\mathcal{A}/dt=\frac{1}{2}R\cos\gamma$.
+由于是椭圆，因此要满足此条件只能在距离焦点较近时速度较快，远离焦点时速度较慢。
+
+设质点在大圆测地线上运动到了点$p$, 其与经线（子午线）的夹角为$\psi$.
+则质点的单位速率在点$p$处的切平面$T_{p}$内可以分解为纬线分量$\sin\psi$和经线分量$\cos\psi$.
+设投影半径为$\rho$, 则容易得到
+\begin{equation*}
+    \frac{1}{2}\rho\sin\psi
+    =\frac{1}{2}R\cos\gamma
+\end{equation*}
+是一个常数。
+推广到任意旋转曲面即为克莱罗定理（Clairaut’s Theorem）：
+\begin{tcolorbox}[colback=white, arc=3mm, auto outer arc]
+\begin{minipage}[c,t]{1.0\textwidth}
+\kaishu
+设$S$是曲线$C$绕轴$L$形成的旋转曲面，如果$\rho$是测地线$g$上的点$q$到$L$的距离，$\psi$是经过点$q$的子午线与测地线之间的夹角。
+当$q$沿着$g$移动时，$\rho\sin\psi$保持不变。
+而且，如果当$q$沿着曲线$g^{\prime}$（任意一段都不是$S$的平行线）移动时，如果$\rho\sin\psi$保持不变，则$g^{\prime}$是测地线。
+\end{minipage}
+\end{tcolorbox}
+该定理是克莱罗1733年研究旋转曲面时得到的。
+
+\subsection{开普勒第二定律}
+
+实际上，
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
