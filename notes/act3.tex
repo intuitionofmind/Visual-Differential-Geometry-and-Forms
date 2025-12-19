@@ -293,7 +293,7 @@ $\mathcal{K}_{\text{ext}}$被定义为$\mathbb{S}^{2}$上连接多面角各个�
 
 \emph{多面体的绝妙定理}：$\mathcal{K}_{\text{int}}=\mathcal{K}_{\text{ext}}$.
 
-\section{形状算符}
+\section{形状算子}
 
 在曲面$p$点处的\emph{形状算符}（shape operator, 又名 Weingarten 映射）告诉我们的是从$p$点出发沿着任意切向量$\mathbf{v}$移动时，法向量$\mathbf{n}$的变化率。
 \begin{equation*}
@@ -326,6 +326,60 @@ $\tau=\varphi-\theta$.
 在实空间里，$\langle{M\mathbf{u}, \mathbf{v}}\rangle=(M\mathbf{u})^{T}\mathbf{v}=\mathbf{u}^{T}M^{T}\mathbf{v}=\mathbf{u}^{T}(M\mathbf{v})\equiv\langle{\mathbf{u}, M\mathbf{v}}\rangle$.
 这也被在代数层面被用作自伴算子的定义。
 
+\subsection{形状算子的矩阵表示和几何意义}
+
+\emph{形状算子是一个自伴算子}，因此其奇异值分解即为谱分解。
+假设任意的正交坐标系$\left\{\mathbf{E}_{1}, \mathbf{E}_{2}\right\}$, 其与主方向$\left\{\mathbf{e}_{1}, \mathbf{e}_{2}\right\}$的夹角为$\theta$.
+则形状算子的矩阵表示为$[S]=R_{-\theta}\cdot\text{diag}(\kappa_1, \kappa_2)\cdot R_{\theta}$, 即
+\begin{equation*}
+\begin{aligned}
+[S]
+&=\begin{pmatrix}
+    \cos\theta & -\sin\theta \\
+    \sin\theta & \cos\theta
+\end{pmatrix}
+\begin{pmatrix}
+    \kappa_{1} & 0 \\
+    0 & \kappa_{2}
+\end{pmatrix}
+\begin{pmatrix}
+    \cos\theta & \sin\theta \\
+    -\sin\theta & \cos\theta
+\end{pmatrix} \\
+&=
+\begin{bmatrix}
+    \kappa_{1}\cos^{2}\theta+\kappa_{2}\sin^{2}\theta & (\kappa_{1}-\kappa_{2})\sin\theta\cos\theta \\
+    (\kappa_{1}-\kappa_{2})\sin\theta\cos\theta & \kappa_{1}\sin^{2}\theta+\kappa_{2}\cos^{2}\theta
+\end{bmatrix}.
+\end{aligned}
+\end{equation*}
+根据欧拉曲率公式，我们看到形状算子的对角线元素正好是$\kappa(\mathbf{E}_{1})$和$\kappa(\mathbf{E}_{2})$.
+从而，
+\begin{equation*}
+[S]=
+\begin{bmatrix}
+    \kappa(\mathbf{E}_{1}) & \frac{\Delta\kappa}{2}\sin2\theta \\
+    \frac{\Delta\kappa}{2}\sin2\theta & \kappa(\mathbf{E}_{2})
+\end{bmatrix}.
+\end{equation*}
+实际上，形状算子的意义还有：
+\begin{tcolorbox}[colback=white, arc=3mm, auto outer arc]
+\begin{minipage}[c,t]{1.0\textwidth}
+\kaishu
+任意切方向的单位向量$\mathbf{\hat{E}}$的法截痕曲率都可以表示为$\kappa(\mathbf{E})=\langle{\mathbf{\hat{E}}, S(\mathbf{\hat{E}})}\rangle$.
+\end{minipage}
+\end{tcolorbox}
+根据线性代数的知识，
+\begin{equation*}
+[S]=
+\begin{bmatrix}
+    \langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle & \langle\mathbf{E}_{1}, S(\mathbf{E}_{2})\rangle \\
+    \langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle & \langle\mathbf{E}_{2}, S(\mathbf{E}_{2})\rangle
+\end{bmatrix}.
+\end{equation*}
+以$[S]$的第一列为例，其几何意义：
+$\langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle$表示的是$\mathbf{E}_{1}$方向的法平面$\Pi_{1}$内部法向量$\mathbf{n}$旋转的快慢；$\langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle$表示$\mathbf{n}$在垂直于法平面的方向旋转的快慢。
+当选定主方向时，$\mathbf{n}$只会在法平面内运动，因此形状算子的矩阵表示为对角矩阵。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
