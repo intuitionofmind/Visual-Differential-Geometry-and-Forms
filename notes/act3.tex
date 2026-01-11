@@ -25,7 +25,7 @@
 \section{平面曲线的曲率}
 
 不存在一维的内蕴曲率概念。
-几何与物理的联系：如果一个单位质量的滚珠在一段无摩擦的曲线上以单位速率运动，金属丝就会有一个垂直于切向的作用力作用在滚珠上，牛顿知道，这个力$F$的大小就是曲线的曲率$\kappa$.
+几何与物理的联系：如果一个单位质量的滚珠在一段无摩擦的曲线上以单位速率运动，金属丝就会有一个垂直于切向的作用力作用在滚珠上，牛顿知道，\emph{这个力$F$的大小就是曲线的曲率$\kappa$}.
 
 曲率最早由牛顿引入，描述曲线的“弯曲性”。
 更确切地说，曲率是切线关于弧长的转向率。
@@ -109,7 +109,7 @@ $(\mathbf{T}, \mathbf{N}, \mathbf{B})$组成了\emph{弗勒内}（Frenet）框�
 \section{曲面的主曲率}
 
 $p$是曲面上的一点，$\mathbf{n}_{p}$是$p$的法向量（normal vector）,$\Pi_{\theta}$是法平面（normal plane）束，其与曲面的交线记作$\mathcal{C}_{\theta}$, $p$到$\mathcal{C}_{\theta}$的曲率中心$c$的距离为$1/\kappa_{\theta}$.
-如果$c$在$+\mathbb{n}_{p}$方向上，$\kappa_{\theta}$为正，反之为负。🈶7
+如果$c$在$+\mathbf{n}_{p}$方向上，$\kappa_{\theta}$为正，反之为负。
 
 选取$p$点作为原点，法线方向为$z$轴，切平面为$x$-$y$平面，建立直角坐标系。
 可以用$z=f(x,y)$来表示曲面，在原点处$f(0,0)=0, \partial_{x}f=\partial_{y}f=0$.
@@ -295,14 +295,15 @@ $\mathcal{K}_{\text{ext}}$被定义为$\mathbb{S}^{2}$上连接多面角各个�
 
 \section{形状算子}
 
-在曲面$p$点处的\emph{形状算符}（shape operator, 又名 Weingarten 映射）告诉我们的是从$p$点出发沿着任意切向量$\mathbf{v}$移动时，法向量$\mathbf{n}$的变化率。
+在曲面$p$点处的\emph{形状算符}（shape operator, 又名 Weingarten 映射）告诉我们的是从$p$点出发沿着任意切向量$\mathbf{v}$移动时，法向量$\mathbf{n}$的变化率：
 \begin{equation*}
     S(\mathbf{v})
     \equiv-\nabla_{\mathbf{v}}\mathbf{n}.
 \end{equation*}
-$S$也可以被看成一个从切空间到切空间的线性映射。
-主方向（principal direction）上的单位向量是形状导数的本征向量，主曲率是对应的本征值，即$S(\mathbf{e}_{i})=\kappa_{i}\mathbf{e}_{i}$.
-从而，$\mathcal{K}_{\text{ext}}$是形状导数的面积扩张系数，即$\det(S)=\kappa_{1}\kappa_{2}$.
+$S$也可以被看成一个\emph{从切空间$T_{p}$到自身的线性映射}，是在切空间内作用于曲面的一个线性算子。
+主方向（principal direction）上的单位向量是形状算子的本征向量，主曲率是对应的本征值，即$S(\mathbf{e}_{i})=\kappa_{i}\mathbf{e}_{i}$, $i=1,2$.
+在此坐标系下，形状算子的矩阵表示为$\text{diag}(\kappa_{1}, \kappa_{2})$.
+从而，$\mathcal{K}_{\text{ext}}$是形状算子的面积扩张系数，即$\det(S)=\kappa_{1}\kappa_{2}$.
 
 \subsection{补充：奇异值分解的几何学}
 
@@ -380,6 +381,8 @@ $\tau=\varphi-\theta$.
 以$[S]$的第一列为例，其几何意义：
 $\langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle$表示的是$\mathbf{E}_{1}$方向的法平面$\Pi_{1}$内部法向量$\mathbf{n}$旋转的快慢；$\langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle$表示$\mathbf{n}$在垂直于法平面的方向旋转的快慢。
 当选定主方向时，$\mathbf{n}$只会在法平面内运动，因此形状算子的矩阵表示为对角矩阵。
+
+（习题15-18）下面我们考虑形状算子在具体坐标系下的表示。
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
