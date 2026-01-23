@@ -4,6 +4,7 @@
 \usepackage{graphicx} % Required for inserting images
 \usepackage{enumerate}
 \usepackage{ctex}
+\usepackage{bbm}
 \usepackage{romannum}
 \usepackage[colorlinks=true, allcolors=magenta]{hyperref}
 \usepackage[legalpaper, margin=100pt]{geometry}
@@ -295,12 +296,12 @@ $\mathcal{K}_{\text{ext}}$被定义为$\mathbb{S}^{2}$上连接多面角各个�
 
 \section{形状算子}
 
-在曲面$p$点处的\emph{形状算符}（shape operator, 又名 Weingarten 映射）告诉我们的是从$p$点出发沿着任意切向量$\mathbf{v}$移动时，法向量$\mathbf{n}$的变化率：
+在曲面$p$点处的\emph{形状算符}（shape operator, 亦称Weingarten映射）告诉我们的是从$p$点出发沿着任意切向量$\mathbf{v}$移动时，法向量$\mathbf{n}$的变化率：
 \begin{equation*}
     S(\mathbf{v})
     \equiv-\nabla_{\mathbf{v}}\mathbf{n}.
 \end{equation*}
-$S$也可以被看成一个\emph{从切空间$T_{p}$到自身的线性映射}，是在切空间内作用于曲面的一个线性算子。
+$S$也可以被看成一个\emph{从切空间$T_{p}$到自身的线性映射}，是在切空间内作用于曲面的一个线性算子，描述的是如何把一个切向量变换到另一个切向量的具体信息。
 主方向（principal direction）上的单位向量是形状算子的本征向量，主曲率是对应的本征值，即$S(\mathbf{e}_{i})=\kappa_{i}\mathbf{e}_{i}$, $i=1,2$.
 在此坐标系下，形状算子的矩阵表示为$\text{diag}(\kappa_{1}, \kappa_{2})$.
 从而，$\mathcal{K}_{\text{ext}}$是形状算子的面积扩张系数，即$\det(S)=\kappa_{1}\kappa_{2}$.
@@ -330,7 +331,7 @@ $\tau=\varphi-\theta$.
 \subsection{形状算子的矩阵表示和几何意义}
 
 \emph{形状算子是一个自伴算子}，因此其奇异值分解即为谱分解。
-假设任意的正交坐标系$\left\{\mathbf{E}_{1}, \mathbf{E}_{2}\right\}$, 其与主方向$\left\{\mathbf{e}_{1}, \mathbf{e}_{2}\right\}$的夹角为$\theta$.
+假设任意的\emph{正交坐标系}$\left\{\mathbf{E}_{1}, \mathbf{E}_{2}\right\}$, 其与主方向$\left\{\mathbf{e}_{1}, \mathbf{e}_{2}\right\}$的夹角为$\theta$.
 则形状算子的矩阵表示为$[S]=R_{-\theta}\cdot\text{diag}(\kappa_1, \kappa_2)\cdot R_{\theta}$, 即
 \begin{equation*}
 \begin{aligned}
@@ -371,18 +372,47 @@ $\tau=\varphi-\theta$.
 \end{minipage}
 \end{tcolorbox}
 根据线性代数的知识，
-\begin{equation*}
+\begin{equation}
 [S]=
 \begin{bmatrix}
     \langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle & \langle\mathbf{E}_{1}, S(\mathbf{E}_{2})\rangle \\
     \langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle & \langle\mathbf{E}_{2}, S(\mathbf{E}_{2})\rangle
 \end{bmatrix}.
-\end{equation*}
+\label{eq:shape_operator_in_ortho_basis}
+\end{equation}
 以$[S]$的第一列为例，其几何意义：
-$\langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle$表示的是$\mathbf{E}_{1}$方向的法平面$\Pi_{1}$内部法向量$\mathbf{n}$旋转的快慢；$\langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle$表示$\mathbf{n}$在垂直于法平面的方向旋转的快慢。
+\emph{$\langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle$表示的是$\mathbf{E}_{1}$方向的法平面$\Pi_{1}$内部法向量$\mathbf{n}$旋转的快慢；$\langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle$表示$\mathbf{n}$在垂直于法平面的方向旋转的快慢}。
 当选定主方向时，$\mathbf{n}$只会在法平面内运动，因此形状算子的矩阵表示为对角矩阵。
 
-（习题15-18）下面我们考虑形状算子在具体坐标系下的表示。
+\subsection{曲面参数化}
+
+以曲面上的某一点为原点建立坐标系，一般选取切平面为$x$-$y$平面，$z$轴方向为法向量,则曲面可以被$z=f(u,v)$参数化。
+在三维空间中的表示就是$\mathbf{r}=(x, y, z=f)$.
+则切向量为$\mathbf{r}_{u}=(x_{u}, y_{u}, f_{u}), \mathbf{r}_{v}=(x_{v}, y_{v}, f_{v})$.
+我们可以取归一化之后的切向量来作为基向量：
+\begin{equation*}
+    \mathbf{u}_{1}=\frac{\mathbf{r}_{u}}{\sqrt{x_{u}^{2}+y_{u}^{2}+f_{u}^{2}}}, \quad
+    \mathbf{u}_{2}=\frac{\mathbf{r}_{v}}{\sqrt{x_{v}^{2}+y_{v}^{2}+f_{v}^{2}}}.
+\end{equation*}
+注意$\left\{\mathbf{u}_{1}, \mathbf{u}_{2}\right\}$一般来说不是正交的。
+$S$在该坐标系下的表示为
+\begin{equation*}
+    S(\mathbf{u}_{j})
+    \equiv-\frac{\partial\mathbf{n}}{\partial u^{j}}
+    =\sum_{i}S_{j}^{i}\mathbf{u}_{i},
+\end{equation*}
+$u^{j}$是曲面的第$j$个参数，在这里即$u^{1}=u, u^{2}=v$.
+$S_{j}^{i}$是具体的矩阵元。
+上式两边再同时点乘$\mathbf{u}_{k}$，即可得到\emph{第二基本形式}的矩阵元：
+\begin{equation*}
+    \langle S(\mathbf{u}_{j}), \mathbf{u}_{k}\rangle
+    =\sum_{i}S_{j}^{i}\langle \mathbf{u}_{i}, \mathbf{u}_{k}\rangle
+    =\sum_{i}g_{ik}S_{j}^{i}
+    =\langle \mathbf{u}_{j}, S(\mathbf{u}_{k})\rangle
+    \equiv II_{jk}.
+\end{equation*}
+从而，$II=G\cdot S$, $S=G^{-1} \cdot II$.
+如果是正交坐标系，$G=\mathbbm{1}$, 则$S=II$回到\emph{公式}~\ref{eq:shape_operator_in_ortho_basis}.
 
 %\bibliographystyle{unsrt}
 %\bibliography{refs}
