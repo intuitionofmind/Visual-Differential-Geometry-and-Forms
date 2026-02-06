@@ -1,0 +1,16 @@
+\contentsline {section}{\numberline {1}平面曲线的曲率}{i}{section.1}%
+\contentsline {section}{\numberline {2}三维空间的曲线}{ii}{section.2}%
+\contentsline {section}{\numberline {3}曲面的主曲率}{ii}{section.3}%
+\contentsline {section}{\numberline {4}测地线和测地曲率}{iii}{section.4}%
+\contentsline {subsection}{\numberline {4.1}两种曲率}{iii}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}旋转曲面上的测地线}{iii}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}开普勒第二定律}{iv}{subsection.4.3}%
+\contentsline {section}{\numberline {5}曲面的外在曲率}{iv}{section.5}%
+\contentsline {section}{\numberline {6}高斯的绝妙定理}{v}{section.6}%
+\contentsline {section}{\numberline {7}尖刺曲率}{v}{section.7}%
+\contentsline {subsection}{\numberline {7.1}圆锥曲率}{v}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}多面角曲率}{v}{subsection.7.2}%
+\contentsline {section}{\numberline {8}形状算子}{v}{section.8}%
+\contentsline {subsection}{\numberline {8.1}补充：奇异值分解的几何学}{v}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}形状算子的矩阵表示和几何意义}{vi}{subsection.8.2}%
+\contentsline {subsection}{\numberline {8.3}曲面一般参数化后的形状算子}{vi}{subsection.8.3}%

@@ -268,6 +268,7 @@ $\mathbf{r}$在该平面上的坐标为$(u, v)$,即
 高斯绝妙定理告诉我们：
 虽然$\mathcal{K}_{\text{ext}}=\kappa_{1}\kappa_{2}$是通过外蕴的$\kappa_{1,2}$定义的（$\kappa_{1,2}$依赖于曲面如何嵌入三维空间），当时$\mathcal{K}_{\text{ext}}$却是\emph{内蕴}的，在$\mathcal{S}$的等距变换下保持不变。
 用外在方式定义的曲率$\mathcal{K}_{\text{ext}}$与通过内蕴角盈定义的高斯曲率是相等的，即$\mathcal{K}_{\text{ext}}=\mathcal{K}$.
+注意：绝命定理的逆命题不成立，即具有相等曲率的曲面不一定是等距同构的。
 
 例子：将一张白纸卷成圆筒，这是一个等距变换。
 
@@ -384,7 +385,7 @@ $\tau=\varphi-\theta$.
 \emph{$\langle\mathbf{E}_{1}, S(\mathbf{E}_{1})\rangle$表示的是$\mathbf{E}_{1}$方向的法平面$\Pi_{1}$内部法向量$\mathbf{n}$旋转的快慢；$\langle\mathbf{E}_{2}, S(\mathbf{E}_{1})\rangle$表示$\mathbf{n}$在垂直于法平面的方向旋转的快慢}。
 当选定主方向时，$\mathbf{n}$只会在法平面内运动，因此形状算子的矩阵表示为对角矩阵。
 
-\subsection{曲面参数化}
+\subsection{曲面一般参数化后的形状算子}
 
 以曲面上的某一点为原点建立坐标系，一般选取切平面为$x$-$y$平面，$z$轴方向为法向量,则曲面可以被$z=f(u,v)$参数化。
 在三维空间中的表示就是$\mathbf{r}=(x, y, z=f)$.
@@ -407,11 +408,12 @@ $S_{j}^{i}$是具体的矩阵元。
 \begin{equation*}
     \langle S(\mathbf{u}_{j}), \mathbf{u}_{k}\rangle
     =\sum_{i}S_{j}^{i}\langle \mathbf{u}_{i}, \mathbf{u}_{k}\rangle
-    =\sum_{i}g_{ik}S_{j}^{i}
-    =\langle \mathbf{u}_{j}, S(\mathbf{u}_{k})\rangle
-    \equiv II_{jk}.
+    =\sum_{i}S_{j}^{i}g_{ik}.
 \end{equation*}
-从而，$II=G\cdot S$, $S=G^{-1} \cdot II$.
+即$II=S\cdot G$, 从而
+\begin{equation*}
+    S=II\cdot G^{-1}.
+\end{equation*}
 如果是正交坐标系，$G=\mathbbm{1}$, 则$S=II$回到\emph{公式}~\ref{eq:shape_operator_in_ortho_basis}.
 
 %\bibliographystyle{unsrt}
